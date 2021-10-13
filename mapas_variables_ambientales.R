@@ -13,6 +13,7 @@ library(RColorBrewer)
 
 #' ### Cargar datos
 load('biodata/matriz_ambiental.Rdata')
+load('biodata/Malvaceae.Rdata')
 
 #' ### Paletas
 azul <- colorRampPalette(brewer.pal(8, "Blues"))
