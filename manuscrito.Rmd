@@ -7,16 +7,12 @@ output:
     latex_engine: pdflatex
     template: svm-latex-ms.tex
     number_sections: true
-title: | 
-        | Estudio ecológico de la familia 
-        | Subtítulo
-        | Subtítulo
+title: Estudio ecológico de la familia Malvacease
+    
 author:
 - name: Carolain Pérez Ureña
-  affiliation: Estudiante, Universidad Autónoma de Santo Domingo (UASD)
-abstract: 
-
-"Resumen del manuscrito"
+  affiliation: "Estudiante, Universidad Autónoma de Santo Domingo (UASD)"
+abstract: ""
 keywords: "palabra clave 1, palabra clave 2"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
@@ -40,8 +36,36 @@ header-includes:
 ---
 
 # Introducción
+La Ecología es una disciplica científica dentro de las ciencias biológicas y físicas basada en el estudio de la relación entre los organismos y su medio ambiente.Esta relación incluye interacciones con el mundo físico, así como también con miembros de la misma y de otras especies.[@smith2007ecologia] 
 
-\ldots
+
+
+
+
+
+
+
+
+
+[@bishop1995drainage;@sun2007fast]
+
+
+![Flor](Hibiscus-Malvaceae.jpg){width=50%}
+
+
+| 12 | 34 | 56           | 77 | 23 |
+|----|----|--------------|----|----|
+| 67 | 85 | 234          | 86 | 89 |
+| 93 | 45 | texto prueba |    |    |
+|    |    |              |    |    |
+
+
+
+![Districución del PH por cuadros de  1 Ha](mapa_cuadros_ph.png){width=50%}
+
+![Districución de las pendientes en grados por cuadros de  1 Ha\label{fig:mapa_cuadros_pendiente}](mapa_cuadros_pendiente.png){width=50%}
+
+
 
 # Metodología
 
@@ -64,3 +88,4 @@ header-includes:
 \ldots
 
 # Referencias
+
