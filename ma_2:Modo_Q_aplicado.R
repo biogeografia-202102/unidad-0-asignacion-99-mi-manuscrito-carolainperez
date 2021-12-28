@@ -146,4 +146,3 @@ env_mix <- bci_env_grid %>%
 env_mix_d <- daisy(x = env_mix, metric = 'gower')
 env_mix_d %>% as.dist %>% tidy
 env_mix_d %>% coldiss(diag = T)
-#'

@@ -129,4 +129,3 @@ grid.arrange(p1, p2, nrow = 1)
 #'
 #'  Compara la matriz anterior con la generada por `dist.ldc`, objeto `d_cho`:
 d_cho
-#' 

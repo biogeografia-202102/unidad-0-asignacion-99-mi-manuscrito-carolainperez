@@ -69,4 +69,4 @@ mapa_cuadros_ph <- mapView(
     zoom = 15)
 mapa_cuadros_ph
 mapa_cuadros_ph %>% mapshot(file = 'mapa_cuadros_ph.png')
-La concentración de PH se encuentra en la parte oriental los porcentaje mas rojos son mas acidos y son los que están en zonas de vaguadas
+#'La concentración de PH se encuentra en la parte oriental los porcentaje mas rojos son mas acidos y son los que están en zonas de vaguadas

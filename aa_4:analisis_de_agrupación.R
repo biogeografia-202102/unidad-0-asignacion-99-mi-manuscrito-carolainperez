@@ -92,4 +92,4 @@ colSums(mi_fam)
   cluster = grupos_ward_k3,
   func = "r.g",
   nboot = 1000))
-
+#'

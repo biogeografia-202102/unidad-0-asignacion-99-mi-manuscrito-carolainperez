@@ -301,3 +301,4 @@ text(
   cex = 0.7, col = "red")
 (mi_fam_d_bray_pcoa_env <- envfit(mi_fam_d_bray_pcoa, env_num))
 plot(mi_fam_d_bray_pcoa_env, p.max = 0.05, col = 3)
+
