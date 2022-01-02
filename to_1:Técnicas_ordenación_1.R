@@ -25,7 +25,7 @@ load('biodata/matriz_ambiental.Rdata')
 mi_fam <- mc_malvc
 (colnames(mi_fam) <- make.cepnames(colnames(mi_fam)))
 (df_equivalencias <- data.frame(
-  nombre_original = colnames(mc_malv),
+  nombre_original = colnames(mc_malvc),
   colnames(mi_fam)))
 bci_env_grid %>% tibble
 grupos_upgma_k2 <- readRDS('grupos_upgma_k2.RDS')
@@ -260,7 +260,7 @@ par(mfrow = c(1, 1))
 #' 
 #' Excluyendo especie *Thevetia ahouai*, abreviada como *Thevahou*.
 #' 
-mi_fam_ca <- cca(mi_fam[, -grep('Thevahou', colnames(mi_fam))])
+mi_fam_ca <- cca(mi_fam[, -grep('Pachsess', colnames(mi_fam))])
 summary(mi_fam_ca)
 summary(mi_fam_ca, scaling = 1)
 screeplot(mi_fam_ca, bstick = TRUE, npcs = length(mi_fam_ca$CA$eig))

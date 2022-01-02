@@ -21,10 +21,10 @@ source('biodata/funciones.R')
 #' 
 load('biodata/Malvaceae.Rdata')
 load('biodata/matriz_ambiental.Rdata')
-grupos_upgma_k2 <- readRDS('grupos_upgma_k2.RDS')
-table(grupos_upgma_k2) #Importante, tener en cuenta los desiguales tamaños de los grupos
-grupos_ward_k3 <- readRDS('grupos_ward_k3.RDS')
-table(grupos_ward_k3)
+grupos_ward_k2 <- readRDS('grupos_ward_k2.RDS')
+table(grupos_ward_k2) #Importante, tener en cuenta los desiguales tamaños de los grupos
+grupos_ward_k2 <- readRDS('grupos_ward_k2.RDS')
+table(grupos_ward_k2)
 #' 
 #' ### Paletas
 #' 
@@ -40,19 +40,19 @@ colores_grupos <- brewer.pal(8, "Accent")
 #' 
 #' Primero crearé un objeto que permita realizar tanto las pruebas como los diagramas de cajas.
 #' 
-(m_amb_upgma_k2 <- bci_env_grid %>%
+(m_amb_ward_k2 <- bci_env_grid %>%
     select_if(is.numeric) %>% select(-id) %>% 
-    mutate(grupos_upgma_k2) %>%
+    mutate(grupos_ward_k2) %>%
     st_drop_geometry() %>% 
-    pivot_longer(-grupos_upgma_k2, names_to = "variable", values_to = "valor"))
+    pivot_longer(-grupos_ward_k2, names_to = "variable", values_to = "valor"))
 #' 
 #' A continuación, las pruebas:
 #' 
-m_amb_upgma_k2 %>%
+m_amb_ward_k2 %>%
   group_by(variable) %>%
   summarise(
-    p_valor_t = t.test(valor ~ grupos_upgma_k2)$p.value,
-    p_valor_w = wilcox.test(valor ~ grupos_upgma_k2, exact = F)$p.value) %>%
+    p_valor_t = t.test(valor ~ grupos_ward_k2)$p.value,
+    p_valor_w = wilcox.test(valor ~ grupos_ward_k2, exact = F)$p.value) %>%
   arrange(p_valor_t) %>%
   print(n=Inf)
 #' 
@@ -62,9 +62,9 @@ m_amb_upgma_k2 %>%
 #' 
 #' Los gráficos:
 #' 
-m_amb_upgma_k2 %>% 
+m_amb_ward_k2 %>% 
   group_by(variable) %>% 
-  ggplot() + aes(x = grupos_upgma_k2, y = valor, fill = grupos_upgma_k2) + 
+  ggplot() + aes(x = grupos_ward_k2, y = valor, fill = grupos_ward_k2) + 
   geom_boxplot() + 
   scale_fill_brewer(palette = 'Accent') +
   theme_bw() +

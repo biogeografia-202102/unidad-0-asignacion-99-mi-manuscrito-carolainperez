@@ -96,11 +96,11 @@ map_df(lista_cl, function(x) {
 #' 
 #' Para UPGMA:
 #' 
-anch_sil_upgma <- calcular_anchuras_siluetas(
+anch_sil_ward <- calcular_anchuras_siluetas(
   mc_orig = mi_fam, 
   distancias = mi_fam_norm_d, 
-  cluster = lista_cl$cl_upgma)
-anch_sil_upgma
+  cluster = lista_cl$cl_ward)
+anch_sil_ward
 #' 
 #' El objeto `anchuras_siluetas` de la lista `anch_sil_upgma` te muestra un vector con los promedios de anchuras de siluetas para todas las posibles particiones con sentido. Al ser promedios, lo que reflejan es el valor de las siluetas de manera general. Si para una partición dada, se registran promedios de siluetas grandes, se interpreta entonces que habrá muchos casos de grupos claramente aislados para dicha partición.
 #' 
@@ -108,11 +108,11 @@ anch_sil_upgma
 #' 
 #' Haré el gráfico de dendrograma, aunque nota que en este caso primero reordenaré los sitios con la función `reorder.hclust`, de tal suerte que los sitios más próximos en términos de distancias aparecerán próximos también en el dendrograma.
 #' 
-u_dend_reord <- reorder.hclust(lista_cl$cl_upgma, mi_fam_norm_d)
-plot(u_dend_reord, hang = -1)
+u_dend_reord <- reorder.hclust(lista_cl$cl_ward, mi_fam_norm_d)
+plot(u_dend_reord, hang = -2)
 rect.hclust(
   tree = u_dend_reord,
-  k = anch_sil_upgma$n_grupos_optimo)
+  k = anch_sil_ward$n_grupos_optimo)
 #' 
 #' Ahora compararé el dendrograma con el mapa de calor en un mismo gráfico, colocando los dendrogramas en los márgenes del gráfico. Verificaré si el número de grupos hace sentido, recordando los grupos que inicialmente identifiqué.
 #' 
@@ -180,17 +180,17 @@ heatmap(
 #' 
 #' #### UPGMA
 #' 
-cl_pvclust_upgma <-
+cl_pvclust_ward<-
   pvclust(t(mi_fam_norm),
           method.hclust = "average",
           method.dist = "euc",
           iseed = 91, # Resultado reproducible
           parallel = TRUE)
 # Añadir los valores de p
-plot(cl_pvclust_upgma, hang = -1)
+plot(cl_pvclust_ward, hang = -1)
 # Añadir rectángulos a los grupos significativos
-lines(cl_pvclust_upgma)
-pvrect(cl_pvclust_upgma, alpha = 0.91, border = 4)
+lines(cl_pvclust_ward)
+pvrect(cl_pvclust_ward, alpha = 0.91, border = 4)
 #' 
 #' #### Ward
 #' 
@@ -221,23 +221,23 @@ pvrect(cl_pvclust_ward, alpha = 0.91, border = 4)
 #' Para conservar las clasificaciones de grupos de sitios anteriores, crearé un vector con el identificador del grupo al que pertenece cada grupo. Es importante imprimir el resultado, para confirmar que los sitios estén ordenados según aparecen en las matrices de comunidad y ambiental.
 #' 
 #' UPGMA:
-(grupos_upgma_k2 <- as.factor(cutree(lista_cl$cl_upgma, k = 2)))
+(grupos_ward_k2 <- as.factor(cutree(lista_cl$cl_ward, k = 2)))
 #' 
 #' En este caso, los sitios 1 y 2 pertenecen al grupo 1, los sitios 3 al 6 pertenecen al grupo 2, nuevamente, del 7 al 9 pertenecen al grupo 1, el sitio 10 pertenece al grupo 2, y así sucesivamente. Preguntaré cuántos sitios hay en cada grupo mediante la función `table`:
 #' 
-table(grupos_upgma_k2)
+table(grupos_ward_k2)
 #' 
 #' Nota lo desiguales que son estos grupos, un efecto esperado dado el alto grado de autocorrelación espacial que tienen entre sí los cuadros de 1 Ha de BCI. Este desequilibrio afecta las inferencias que realizaré en *scripts* posteriores, pero para fines didácticos los realizaré de todas maneras. No obstante, en tu caso, esperaría y desearía que tu familia asignada ofrezca resultados de agrupamiento más equilibrados.
 #' 
 #' Ward:
 #' 
-(grupos_ward_k3 <- as.factor(cutree(lista_cl$cl_ward, k = 3)))
-table(grupos_ward_k3)
+(grupos_ward_k2 <- as.factor(cutree(lista_cl$cl_ward, k = 2)))
+table(grupos_ward_k2)
 #'
 #' Guardaré estos vectores en archivos para reutilizarlos en *scripts* posteriores:
 #' 
-saveRDS(grupos_upgma_k2, 'grupos_upgma_k2.RDS')
-saveRDS(grupos_ward_k3, 'grupos_ward_k3.RDS')
+saveRDS(grupos_ward_k2, 'grupos_ward_k2.RDS')
+saveRDS(grupos_ward_k2, 'grupos_ward_k2.RDS')
 #' 
 #' Evita usar este, y cualquier otro procedimiento, de manera mecánica. En tu caso, quizá tengas que cortar tus dendrogramas en más o menos grupos de sitios. También podría resultar que alguno de dichos métodos, o ambos, sean irrelevante para tu caso, por lo que probablemente tendrás que elegir otro que haga sentido ecológico a tus datos (por ejemplo, *complete*).
 #' 

@@ -12,10 +12,13 @@ title: Análisis de la familia de plantas Malvaceae en la parcela de 50 Hectáre
 author:
 - name: Carolain Pérez Ureña
   affiliation: "Estudiante, Universidad Autónoma de Santo Domingo (UASD)"
-abstract: "La Isla Barro colorado también conocida como BCI se caracteriza por ser un lugar idóneo para la realización de estudios cientifico. Tal es el caso de este trabajo en el cual se analizó el comportamiento de la familia de planta Malvaceae perteneciente a la parcela de 50 hectárea de esta Isla. El objetivo fue analizar la asociación, agrupamiento, distribución, de la familia de plantas Malvaceae, así como los factores que influyentes, su distribución en cuanto a riqueza y abundancia, la relación que tiene con el terreno, y los elementos del suelo, la autocorrelación existente entre sus especies y los compuestos del suelo más significativos. Mediante métricas y con los datos de censos recolectados durante varios años en BCI se obtuvieron los resultados esperados. La familia Malvaceae posee en total 3,792 individuos distribuidos en forma discontinuua dentro de la parcela, estos se agrupa en 16 grupos y se pueden encontrar en más comunmente en zonas húmedas de vaguada, llanuras y espolón con una alta presencia de PH, Zinc, Boro y calcio en sus suelos. La especie con que más predomina es Quararibea asterolepis con más de 2,000 individuos y es especie más contribuidora, mientras que los sitios con mayor contribucción de todas las Ha son 13 y 46. Apeiba membranacea resultó ser la especies con más autocorrelación. Finalmente existe una relación entre los elementos quimicos del suelo y del relieve con su distribución por ende su asociación y correlación entre si.
+abstract: "La Isla Barro Colorado más conocida como BCI (por sus siglas en inglés) se caracteriza por ser un lugar idóneo para la realización de estudios cientificos. Tal es el caso de esta investigación donde se estudió la familia de planta *Malvaceae* perteneciente a la parcela de 50 hectárea de la Isla.
 
+Este tuvo como objetivo analizar la riqueza, abundancia, asociación, agrupamiento de datos, distribución, y autocorrelación entre las variables de la familia *Malvaceae*. Así como verificar si existe una relación entre los factores ambientales (elementos del suelo y relieve) con su patrón de distribución y asociación. También busca identificar las especies consideradas como indicadoras, las especies que más contribuyeron a la diversidad (alpha y beta) y distinguir los sitios con mayor y menor abundancia. Evaluar la colinealidad entre las variables del suelo y especies con técnicas de ordenación e identificar concretamente cuáles son las especies, elementos químicos de suelo y área geomorfológica más significativos en la distribución, diversidad, autocorrelación espacial, y en su homogeneidad.
+
+Mediante métricas y con datos de censos recolectados durante años se obtuvieron los resultados esperados. De este modo, se determinó el comportamiento de la familia de plantas *Malvaceae* en la parcela, así como los factores ambientales, del relieve y elementos del suelo que intervienen en dicho comportamiento.
 "
-keywords: "Malvaceae, ecología numérica, variables ambientales, especies, BCI, Quararibea asterolepis"
+keywords: "Malvaceae, ecología espacial, variables ambientales, especies, BCI, Quararibea asterolepis"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
 fontfamily: mathpazo
@@ -38,71 +41,62 @@ header-includes:
 ---
 
 # Introducción
-La isla Barro Colorado (BCI) es un área natural localizada en el lago Gatún del canal de Panamá que los cientificos la han dedicado al estudio de bosques tropicales, de fauna y flora. Desde su creación ha sido usada como centro de investigación, útil para hacer proyectos de investigación. 
+Una de las áreas naturales más estudiadas por los cientificos durante años ha sido la isla Barro Colorado (BCI) localizada en el lago Gatún del canal de Panamá. Su diversidad de bosques y su fauna la han convertido en un centro de estudio, útil para hacer proyectos de exploración. Es considerada como uno de los sitios con más larga historia de investigación continua en los trópicos del Nuevo Mundo, lo que ha proporcionado una base de información científica inigualada en todo el planeta. Cada año, entre 200 y 400 científicos de todo el mundo visitan el Monumento Natural Barro Colorado.[@fisher2016]
 
-Cuenta con una vegetación de bosque tropical húmedo semi-perenne, propio de climas húmedos tropicales. La mitad de la isla se encuentra cubierta de bosque jóven de 100 o más años de edad, el resto está cubierto de bosque viejo, el cual ha sufrido muy pocas perturbaciones en los últimos 400 años [@moreno2012ambito]. Se caracteriza un promedio anual de temperatura de 27$^{\circ}$ C en áreas abiertas, con una variación diurna de 9$^{\circ}$ C. Tiene una precipitación promedio anual es de 2,600 mm, con una estación lluviosa que va de mayo a diciembre, y una estación seca que comprende los meses restantes. Está constituida por un total de 265 especies de plantas, y cada una pertenece a una familia.Su flora es considerablemente más rica en relación con el tamaño de la isla  [@croat1978flora]. 
+La mitad de la isla se encuentra cubierta de bosque jóven tropical húmedo semi-perenne de 100 o más años de edad, el resto está cubierto de bosque viejo el cual ha sufrido muy pocas perturbaciones en los últimos 400 años  [@moreno2012ambito]. Se caracteriza por tener un promedio anual de temperatura de 27$^{\circ}$ C en áreas abiertas, con una variación diurna de 9$^{\circ}$ C. Tiene una precipitación promedio anual es de 2,600 mm, con una estación lluviosa que va de mayo a diciembre, y una estación seca que comprende los meses restantes. Está constituida por un total de 265 especies de plantas, y cada una pertenece a una familia. [@croat1978flora]. 
 
-Dentro de su amplia variedad de familias de plantas se encontran las Malvaceae. Esta perteneciente a la familia de las Malvales, con flores dicotiledóneas, que consta de aproximadamente 244 géneros con aproximadamente 4225 especies, distribuidas en regiones tropicales a templadas.
+Dentro de su amplia variedad de familias de plantas se encuentran las *Malvaceae*. Esta planta pertenece a la familia de las *Malvales*, que reúne cerca de 250 géneros y 3929 especies distribuidas por las regiones templadas y cálidas de todo el mundo [@rondon2009]. 
 
-Son plantas de hierbas, arbustos o árboles, generalmente con pelos estrellados. Los tallos son de fibra de líber robusta con cavidad de mucílago. Las hojas son simples, alternas,  palmadamente divididas, palmadas veteadas, con estípulas y pecioladas. Las flores son actinomórficas, solitarias, fasciculadas o dispuestas en cimas o panículas con sépalos de 3 a 5, libres o connatos y valvados. Los pétalos son cinco, libres, giratorios, adnados a la columna estaminal en la base. Los estambres son numerosos, filamentos connados en tubos, conocidos como adelfos[@xu2017malvaceae].(ver figura 1)
+Son plantas de hierbas, arbustos o árboles, generalmente con pelos estrellados. Los tallos son de fibra de líber robusta con cavidad de mucílago. Las hojas son simples, alternas,palmadamente divididas, palmadas veteadas, con estípulas y pecioladas. Las flores son actinomórficas, solitarias, fasciculadas o dispuestas en cimas o panículas con sépalos de 3 a 5, libres o connatos y valvados. Los pétalos son cinco, libres, giratorios, adnados a la columna estaminal en la base. Los estambres son numerosos, filamentos connados en tubos, conocidos como adelfos [@xu2017malvaceae](ver figura \ref{Figura}).
 
-![Flor de la planta Malvaceae](Hibiscus-Malvaceae.jpg){width=30%}
+![Flor de la planta Malvaceae \label{Figura}](Hibiscus-Malvaceae.jpg){width=50%}
 
+Barro Colorado ofrece ventajas excepcionales para un estudio de ecología, y la morfología de ciertos grupos de plantas podría investigarse provechosamente [@standley1927flora]. Razón, por la que el presente estudio se basó en analizar el comportamiento de la familia de plantas *Malvaceae* en BCI; en el cual abarcó un análisis de abundancia, riqueza, asociación, distribución, agrupamiento, autocorrelación espacial entre las variables de la familia y la influencia que tienen los factores ambientales y geomorfológicos en su patrón de distribución y asociación. 
 
-El objetivo de este estudio es identificar la abundancia y la riqueza de esta familia de plantas; analizar su asociación y que influye para que se de dicha asociación. Conocer el método más eficiente para evaluar los dendogramas, evaluar la homogeneidad de promedios entre sitios de especies. De igual manera identificar el patrón y los factores ambientales que intervienen en su distribución. Finalmente integrando la ecología numérica analizar la autocorrelación espacial entre variables. 
+De igual forma, con el análisis de diversidad (alpha y beta) conocer la riqueza y equidad de las especies junto con los sitios que tienen mayor y menor diversidad. Además de, conocer las especies consideradas como indicadoras, y determinar la colinealidad existente entre variables del suelo especies. 
 
-La mayor parte del trabajo de se desarrolló en entorno al lenguaje de programación R, en el cual se efectuaron los análisis de agrupamientos, ambientales,ordenamiento y de ecología numérica, apoyandose con paquetes como tidyverse junto con dplyr y vegan con la cual se crearon las matrices de comunidad ambientales. Con el paquete simple Features (sf) se crearon cuadros por hectareas para asi obtener la densidad de cada especie. Asimismo, aunque en menor medida se emplearon los paquetes adespatial, vegetarian, broom y cluster. También fueron usados los paquetes ez para la correlación entre variables y paquetes ggplot2, mapview y graphics para la representación gráfica. Por último, los datos se obtuvieron a partir del repositorio de ecología númerica de José Martinez Battle [@jose_ramon_martinez_batlle_2020_4402362](2020).
-
-Para el desarrollo de este estudio se han formulado las siguientes preguntas:
-
-¿En qué zona se encuentra una mayor abundancia y riqueza de especies?¿y Por qué?
-
-¿Cuáles elementos influyen para la asociación entre especies?
-
-¿Cuál es el método apropiado agrupar las especies en forma de dendograma?
-
-¿Existe una influencia entre las variables ambientales del suelo y la distribución de especies? ¿Cuál es el elemento que más influyente?
-
-¿Existe una influencia entre las variables geomorfologicas y la distribución de las especies?¿Cuál es la variable que más influye?
-
-¿Existe una autocorrelación entre variables?
-
-¿Cuáles son las especies y elementos con mayor autocorrelación?
+Por último, identificar cuáles son las especies, elementos del suelo y áreas morfológicas más significativos en la distribución, diversidad, autocorrelación espacial, y en su homogeneidad. Por otro lado, se busca conocer el método más eficiente para agrupar y organizar los datos a través de dendogramas. Esta investigación podrá ser utilizada como base para estudios posteriores con esta importante familia de plantas.
 
 
 # Metodología
-El estudio se realizó en la Isla de Barro Colorado (BCI), localizada  entre los 9$^{\circ}$ 09’ N y 79$^{\circ}$ 51’ W, que forma parte del Monumento Natural de  Barro  Colorado  (5,500  ha,  Leigh,  1999).  Es  una  isla formada en 1914, cuando se represó el Río Gatún como parte del  trabajo  para  la  creación  del  Canal  de  Panamá {moreno2012ambito}. Es una Zona administrada por el Instituto de Investigaciones Tropicales del Smithsonian dedicada a investigaciones científicas.
-
-Dentro de Isla se encuentra la parcela de 50 Hectáreas que tiene 1,000 metros de largo y 500 metros de ancho lo que da un total de 50 ha que se subdivide en 1 ha. En esta se llevó a cabo nuestro estudio.(ver Figura 2)
 
 
-![Mapa de la Isla Barro Colorado](isla_barro_colorado_mapa.png){width=50%}
+*Área de estudio y descripción de metodología*
+
+El estudio se realizó en la Isla Barro Colorado (BCI), localizada entre los 9$^{\circ}$ 09’ N y 79$^{\circ}$ 51’ W, que forma parte del Monumento Natural de  Barro  Colorado  (5,500  ha,  Leigh,  1999). Formada en 1914 cuando se represó el Río Gatún como parte del  trabajo  para  la  creación  del  Canal  de  Panamá [@moreno2012ambito]. Es una zona administrada por el Instituto de Investigaciones Tropicales del Smithsonian dedicada a investigaciones científicas.
+
+Dentro de Isla se encuentra la parcela de 50 Hectáreas con 1,000 metros de largo y 500 metros de ancho lo que da un total de 50 ha que se subdivide en 1 ha. En la que se llevó a cabo el presente estudio (ver figura  \ref{mapa_1}).
 
 
-En esta primera parte del trabajo se hace un análisis ambiental de asociación estadística con los datos pre-censales de la parcela de BCI. Usando una matriz de comunidad convertidas en columnas de hábitats para generar mapas de abundancia por especie, abundancia de la comunidad, abundancia de riqueza numérica de toda la comunidad. Es importante resaltar que antes de se cargaron los paquetes para generar las tablas en R y gráficos.
+![Mapa de la Isla Barro Colorado \label{mapa_1}](isla_barro_colorado_mapa.png){width=50%}
 
-Con la transformación de la matriz de Hellinger, se midió la asociación de distancia entre sitios; utilizándose la similaridad o la disimilaridad de Jaccard se obtuvo una matriz de distancia de comunidad transformada a la cuál se le calculó su distancia Euclidea. Esta distancia Jaccard indica que mientra mayor distancia menor similaridad, es decir, mientras más crece la distancia el parecido entre los sitios es cada vez menor. De este mismo modo para análisis de asociación se usaron las métricas de modo Q y R; con el coeficiente de correlación de Pearson que mide la relación estadística entre dos variables.
 
-La segunda parte del trabajo se basó en el análisis de agrupamiento. Con el fin de comprobar el método más adecuado se utilizaron los métodos de enlace simple (se usa distancia mínima), completo (se usa distancia máxima) y UPGM (media entre valores de distancia mínima y máxima) y WARD basados en el criterio de correlación cofenética, que consiste en la aproximación entre la distancia cofenética y la matriz de distancias Euclideas.De esta manera con los valores de abundancia de especie junto con el método de varianza mínima de agrupamiento de Ward se va construyendo un árbol dentrítico tomando el criterio de la técnica de anchura de silueta (por el método WARD y UPGMA),que refleja los cortes del arbol en varios grupos usando la posición que ocupa el promedio más alto. En este caso el valor de anchura promedio fue 2 con 3 sitios. Con la finalidad de obtener resultados más fiables se usó el reemuestreo de boostrap multiescalar que permite resolver problemas relacionados con la estimación de intervalos de confianza o la prueba de significación estadística [ledesma2008introduccion].
+La mayor parte del trabajo se desarrolló en entorno al lenguaje de programación R, en el cuál se efectuaron los análisis de agrupamientos, ambientales, ordenamiento y de ecología numérica, apoyandose con paquetes como *tidyverse* junto con *dplyr* y *vegan* con la cual se crearon las matrices de comunidad ambientales. Con el paquete *simple features* (sf) se crearon cuadros por hectáreas para así obtener la densidad de cada especie. En menor medida se emplearon los paquetes *adespatial*, *vegetarian*, *broom* y *cluster*. Paquetes como *ez* fueron usados para la correlación entre variables y *ggplot2*, *mapview* y *graphics* para la representación gráfica. Los datos se obtuvieron a partir del repositorio de ecología númerica de José Martinez Battle [@jose_ramon_martinez_batlle_2020_4402362](2020).
 
-Con la prueba T de Student, y la prueba no paramétrica de la suma de rangos de Wilcoxon (medianas), se evaluaron la homogeneidad de medias y medianas para dos grupos usando como variable de agrupamiento los grupos establecidos en el agrupamiento UPGMA y Ward. Estas sirvieron para hacer una correlación con los resultados de abundancia global y riqueza.
+En la primera etapa del trabajo se efectuó un análisis ambiental de asociación estadística con los datos pre-censales de la parcela de BCI, usando una matriz de comunidad convertidas en columnas de hábitats para generar mapas de abundancia por especie, y riqueza numérica de toda la comunidad.
 
-Mediante el análisis de especies indicadoras de Indval se obtuvieron las especies consideradas como indicadoras y un análisis de especies con preferencia por hábitat por medio del coeficiente de correlación biserial puntual. 
+Para el análisis de asociación se usaron las métricas de modo Q y R; con el coeficiente de correlación de Pearson que mide la relación estadística entre dos variables. En cuanto a la medición de asociación de distancia entre sitios; se usó la transformación de la matriz de Hellinger con la metodología de la similaridad de Jaccard para obtener una matriz de distancia de comunidad transformada a la cuál se le calculó su distancia euclidea la cual indica que mientras mayor distancia menor similaridad, es decir, mientras más crece la distancia el parecido entre los sitios es cada vez menor.
 
-Dentro del análsis de agrupamiento, se realizó la ordenación simple (no restringida) usando la técnica PCA y la ordenación restringida RDA y canónica con el fin de hacer un escalonamiento de las variables de suelo, con los valores VIF y la distancia entre sitios por el método de ji Cuadrado.
+La segunda fase del trabajo se basó en el análisis de agrupamiento. Con el fin de comprobar el método más adecuado para agrupar las especies en forma de dendograma se compararon los métodos de por enlace  simple, completo, de grupo de pares ponderados con media aritmética conocido como UPGMA (siglas de *unweighted pair group method with arithmetic mean*) y el método Ward teniendo como criterio la correlación cofenética. 
 
-Análisis de diversidad
+Con los valores de abundancia de especie junto con el método de varianza mínima de agrupamiento de Ward se construyó un árbol dentrítico tomando el criterio de la técnica de anchura de silueta, que refleja los cortes del arbol en varios grupos usando la posición que ocupa el promedio más alto. Para obtener resultados más fiables se usó el reemuestreo de boostrap multiescalar que permite resolver problemas relacionados con la estimación de intervalos de confianza o la prueba de significación estadística [@ledesma2008introduccion].
 
-Esta tercera parte se basó en el análisis de diversidad (Alpha y Beta) donde se determinaron dos componentes principales; la riqueza y equidad. Por medio de la entropia de Shannon y la antripia de Simpson se medió el indice de equidad de Pielu para la diversidad Alpha.En el análisis beta se busca la equidad usando la aproximación de Whittaker, asociada a los números de Hill y la ratio. Se identificaron las especie y sitios que contribuyen a la diversidad beta. Al final el método de la rarefacción se utilizó para poder estimar combinaciones se utilizaron las métricas de la entropia de Renyi generaliza para obtienen los números de diversidad de Hill.
+Por medio de la prueba *t* de *Student*, y la prueba no paramétrica de la suma de rangos de Wilcoxon (medianas), se evaluaron la homogeneidad de medias y medianas para dos grupos usando como variable de agrupamiento los grupos establecidos en el agrupamiento  Ward. Estas sirvieron para hacer una correlación con los resultados de abundancia la global y la de la especie.
 
-Ecología numérica
+Mediante el valor indicador (indVal) se detectaron las especies consideradas como indicadoras y un análisis de especies con preferencia por hábitat por medio del coeficiente de correlación biserial puntual. 
 
-En esta última parte del trabajo se realizaron análisis de vencidad, de autocorrelación espacial mediante correlograma de puntos y de correlación.Así las técnicas aplicadas fueron la de mantel para determinar la correlación entre dos matrices de distancia y determinar autocorrelación mediante la prueba de permutación para I de moran, utilizando los denominados Lisa. 
+Utilizando la técnica del análisis de componentes principales (PCA) y técnica de ordenación restrigida de analisis de abundancia o RDA (siglas de *Redundancy Analysis*) y canónica por la prueba de *Chi* cuadrado. Se comprobó la coleidalidad entre las variables del suelo y tipos de especies y reconocer la especies más contribuidora, esto se realizó por el criterio de valores señalados con *VIF*.
+
+Para la tercera etapa se midió la de diversidad (alpha y beta) donde se determinaron dos componentes principales; la riqueza y equidad. Por medio de la entropia de Shannon y la antripia de Simpson se midió el indice de equidad de Pielu para la diversidad alpha.En el análisis beta se buscó la equidad usando la aproximación de Whittaker, asociada a los números de Hill y la ratio. Se identificaron las especie y sitios que contribuyen a la diversidad beta. También, se utilizó el método de la rarefacción para poder estimar combinaciones se utilizaron las métricas de la entropia de Renyi generaliza para obtienen los números de diversidad de Hill.
+
+En la última etapa, basada fundamentalmente en ecología espacial se llevaron a cabo análisis de autocorrelación espacial mediante correlograma de puntos y correlación. Así las técnicas aplicadas fueron la de mantel para determinar la correlación entre dos matrices de distancia y determinar autocorrelación mediante la prueba de permutación para *I* de *moran*, utilizando los denominados Lisa. 
 
 
 # Resultados
 
-La familia de plantas Malvaceae cuenta con una cantidad de 3,792 individuos dentro de esa parcela de 50 Hectareas (Ver Tabla 1).En promedio la cantidad de especies por hectarea ronda en torno a unas 8 individuos.A simple vista en la figura presentada más abajo la especie más abundante del conjunto es "Quararibea asterolepis" y guarda una similaritud con el resto de las especies (Ver figura 3).
+La familia de plantas *Malvaceae* cuenta con una cantidad de 3,792 individuos dentro de la parcela (Ver Tabla 1). En promedio la cantidad de especies por hectárea ronda en torno a unas 8 individuos. 
+
+A simple vista en la figura presentada más abajo la especie más abundante del conjunto es *Quararibea asterolepis* guardando una similitud con el resto de las especies (Ver figura   \ref{agrupado}).
 
 
 | Especies de planta       |Cantidad 
@@ -124,86 +118,79 @@ La familia de plantas Malvaceae cuenta con una cantidad de 3,792 individuos dent
 |Trichospermum galeottii   |2        |
 |Pachira quinata           |1        |
 
-Tabla 1. Abundancia por especies 
+Tabla 1.Abundancia por especies
 
-
-![Gráfico de mosaico de abundancia por especie](mosaico_variable.png){width=90%}
-
-
-
-Al evaluar la primera parte del estudio basado en el análisis ambiental se refleja que en la parte oriental de la parcela  existe una mayor abundancia de la familia Malvaceae y una distribución de riquezas máximas concentrada en el borde superior central.(Ver figura 4 y 5). 
-
-
-![Districución de la abundancia por cuadros de  1 de la familia Malvaceae Ha](mapa_cuadros_abun_mi_familia.png){width=60%}
+![Gráfico de mosaico de abundancia por especie\label{agrupado}](mosaico_abundancia.png){width=100%}
 
 
 
-![Districución del riquezas por cuadros de  1 Ha](mapa_cuadros_riq_mi_familia.png){width=60%}
+Al evaluar la primera etapa del estudio basado en el análisis ambiental se refleja que en la parte oriental de la parcela existe una mayor abundancia de la familia *Malvaceae* y una distribución de riquezas máximas concentrada en el borde superior central (Ver figura  \ref{mapa_abundancia} y  \ref{mapa_riqueza}). 
+
+
+![Distribución de la abundancia por cuadros de la familia Malvaceae por Ha \label{mapa_abundancia}](mapa_cuadros_abun_mi_familia.png){width=80%}
+
+
+
+![Districución de las riquezas por cuadros de 1 Ha \label{mapa_riqueza}](mapa_cuadros_riq_mi_familia.png){width=80%}
 
 ## Análisis de asociación
 
 
-En el mapa de calor ordenado (el de la derecha), presenta un clúster gigante en el centro que indica un patrón ordenado de dependencia entre las especies relacionadas. En la diagonal desde "Pseudobombax septenatum" hasta "Apeiba tibourbou" (cuadros de color rosa centrales). También se observan las especies que no parecen asociarse con otras, situadas en los extremos de la diagonal, y relacionadas con otras por medio de valores pequeños de distancia (cuadros azules), como "Theobroma cacao" y "Pachira sessilis".El color rosado indica distancia corta y mientras más cortas los cluster se parecen entre sí.(Ver figura 6). 
+En el mapa de calor ordenado (a la derecha), presenta un clúster gigante en el centro que indica un patrón ordenado de dependencia entre las especies relacionadas. En la diagonal desde *Pseudobombax septenatum* hasta *Apeiba tibourbou* (cuadros de color rosa centrales). También se observan las especies que no parecen asociarse con otras, situadas en los extremos de la diagonal, y relacionadas con otras por medio de valores pequeños de distancia (cuadros azules), como *Theobroma cacao* y *Pachira sessilis*.El color rosado indica distancia corta y mientras más cortas los cluster se parecen entre sí (Ver figura \ref{fig:representacion_asociación_Jaccard}). 
 
-![ Matriz de disimilaridad\label{fig:Representación de la asociación de variables de Jaccard}](Asociacion_variables_jaccard.png){width=90%}
+![ Matriz de asociación entre especies \label{fig:representacion_asociación_Jaccard}](Asociacion_variables_jaccard.png){height=500%}
 
 ## Análisis de agrupamiento 
 
+Los dendogramas fueron generados por los métodos de enlaces simple, completos, UGMA y Ward (Ver figura \ref{4_dendogramas}). Estos mostraron cortes desiguales en los método UPGMA, completo y simple produciendo agrupamientos integrados por un gran número de sitios o por un sitio único. Se detectaron elementos que no forman grupos, es decir, sitios que aparecen aislados del resto como fue el caso del método por enlace simple. No obstante, con el método Ward de anchura de silueta se generó un dendograma más legible. Dicho método sugirió dividir el dendograma en 2 grupos; un grupo pequeño integrado por 8 sitios y otro grupo compuesto por los 42 sitios restantes (Ver figura \ref{dendograma_ward}). 
+
+![Dendogramas por los cuatro métodos \label{dendogramas}](4_dendogramas.png){width=110%}
 
 
-![Dendogramas por los cuatro métodos](4_dendogramas.png){width=90%}
+![Dendograma por el método Ward \label{dendograma_ward}](dendograma_metodo_ward_2_grupos.png){width=80%}
 
-Los dendogramas fueron generados por los métodos de enlaces simple, completos, UGMA y Ward. Estos mostraron cortes desiguales por el método UPGMA, completo y simple donde se abarcó 2 grupos (integrados por múltiples posibles subgrupos); un grupo pequeño integrado por 7 sitios y un grupo grande integrado por el resto. Además de los grupos anteriores, detecto elementos que no forman grupos, es decir, sitios que aparecen aislados del resto, como por ejemplo el 13 y, en algunos métodos, también el 9.
+Para la homogeneidad de promedios se evaluaron mediante las pruebas *T* de *Student* y la suma de rango de Wilcoxon por el métodos de Ward divididas en dos grupos. Estos paneles muestran el promedio entre las variables geomorfológicas y elementos del suelo. El nitrógeno (N), pH,cobre (Cu), y magnesio (Mg) y zinc (Zn) resultaron ser significativamente diferentes en media y mediana; en el caso del relieve el la pendiente media resultó tener el promedio más diferente, en cambio los elementos con mayor homegeneidad de medianas fueron el boro (B), manganeso (Mn), y potasio(K) y en las áreas de relieve estuvieron la elevación media, espolón, e interfluvio (ver figura \ref{homogeneidad}). 
 
-Con el método Ward el promedio de anchura de silueta sugirió dividir el dendograma  en 3 grupos diferentes;un grupo grande y otro pequeño. (Ver figura 7)
-
-
-![Dendograma agrupado en 3 grupos por el método ward](cluster_ward.png){width=80%}
-
-Para la homogeneidad de promedios se evaluaron mediante las pruebas T de Student y la suma de rango de Wilcoxon por el métodos de ward divididas en dos grupos. Estos paneles muestran el promedio entre las variables geomorfológicas y elementos del suelo. El Boro (B), Manganeso (Mn), Nitrógeno (N), y el Ph, P resultaron ser significativamente diferentes en media y mediana; en el caso del relieve la pendiente media resultó tener el promedio más diferente (ver figura 8). 
-
-Mediante el método Indval, se encontraron en total 3 especies que pueden ser consideradas como indicadoras con preferencia de habitats.Especificamente estas especes fueron "Quararibea asterolepis"" como especie asociada al grupo 1, "Luehea seemannii" y "Sterculia apetala" pertenecientes al grupo 2, lo significa que estas especies son  extremadamente importantes en la prueba de permutación.
+Por medio del método del "valor indicador" (Indval), se encontraron en total 3 especies que pueden ser consideradas como indicadoras con preferencia de habitats. Especificamente estas especies fueron *Quararibea asterolepis* como especie asociada al grupo 1, *Luehea seemannii* y *Sterculia apetala* pertenecientes al grupo 2, lo significa que estas especies son extremadamente importantes en la prueba de permutación.
 
 
-![Pruebas de igualdad de promedios entre las  variables](variables_ambientales.png){width=100%}
+![Pruebas de igualdad de promedios entre las variables \label{homogeneidad}](Homogeneidad_promedios_ward.png){width=90%}
 
 
 
 ## Técnicas de ordenación
 
-En el analisis de correspondencia por el método PCA, al ajustar el PCA a la matriz de comunidad y usando la distancia Ji Cuadrado, se encuentra que muchos de los componentes del suelo se encuentran asociados en las variables de comunidad, algun grado de asociación entre las especies y puede ser que sea un patrón consistente(Ver figura 9).
+En el analisis de correspondencia por el método PCA, al ajustarlo a la matriz de comunidad y usando la distancia *Chi* cuadrado, se encuentra que muchos de los componentes del suelo se encuentran asociados en las variables de comunidad, por lo que, presentan algún grado de asociación entre las especies.(Ver figura \ref{escalonamiento}).
 
 
-![Biplot Escalonamiento de variables ambientales por el método PCA](Escalonamiento_ajustado_variables_ambientales_PCA.png){width=70%}
+![Biplot de variables ambientales por el método PCA \label{escalonamiento}](Escalonamiento_ajustado_variables_ambientales.png){width=100%}
 
 
 
-![Triplot de especies y variables de RDA](triplot_RDA_especies.png){width=70%}
+![Triplot de especies y variables por el método RDA \label{escalonamiento_triplot}](triplot_RDA_especies.png){height=500%}
 
-![Triplot de CCA especies no raras](Triplot_CCA_varible.png){width=70%}
+![Triplot por el método CCA de especies no raras \label{escalonamiento_CCA}](Triplot_CCA_varible.png){height=200%}
  
-El RDA anterior muestra la colealidad que existe entre las diferentes variables de especies y elementos del suelo.Las especies Hampea appendiculata, Ceiba pentandra, tienen una gran contribucción en diferentes sitios, que se relacionan con el P, N, un poco con el Nitrógeno, en el caso de Apeimenb posee mucha asociación con el Aluminio. "Quaraste" es la que más contribuye al conjunto de sitios más mineralizados. Por otro lado, Fueron excluidas algunas variables por tener el valor  VIF por encima de 10 como es el caso del manganeso (Mg),calcio(Ca) y las coordenadas UTM. A pesar de, habían variables con un alto valor VIF por lo que se optó por conservarlas por razones biogeoquimicas y de asociación (Ver gráfico 10).
+En el análisis de redundancia (RDA) anterior muestra la colealidad que existe entre las diferentes variables de especies y elementos del suelo. Las especies *Hampea appendiculata*, *Ceiba pentandra*, tienen una gran contribucción en diferentes sitios, que se relacionan con el Fósforo (P), un poco con el nitrógeno (N), en el caso de *Apeimenb* tiene mucha asociación con el Aluminio (Al). *Quaraste* es la que más contribuye al conjunto de sitios con más elementos. Por otro lado, Fueron excluidas algunas variables por tener el valor  *VIF* por encima de 10 como es el caso del magneso (Mg), calcio(Ca) y las coordenadas UTM. A pesar de, habían variables con un alto valor *VIF* por lo que se optó en conservarlas por razones biogeoquimicas y de asociación (Ver gráfico \ref{escalonamiento_triplot}).
 
-De esta misma manera, en el análisis de correspondencia canónica fueron excluidas las especies con menos de 100 individuos (especies raras) de la matriz de comunidad, se convervaron 5 en total, y se excluyeron 11 (Ver gráfico 11).En ambos gráficos las variables aparecen en el mismo lugar salvo algunas especies que desaparecieron en el triplot de CCA por tener menos de 100 individuos. 
+De esta misma manera, en el análisis de correspondencia canónica (CCA) fueron excluidas las especies con menos de 100 individuos (especies raras) de la matriz de comunidad, se convervaron 5 en total, y se excluyeron 11 (Ver gráfico \ref{escalonamiento_CCA}). En ambos gráficos las variables aparecen en el mismo lugar salvo algunas especies que desaparecieron en el "triplot de CCA" por tener menos de 100 individuos. 
 
 
 ## Análisis de diversidad alpha y beta
 
-Se usaron diferentes métricas para medir los principales componentes de la diversidad: abundacia y equidad. Se  hicieron mediante la equidad de Shanon (equidad) y antropia de Simpson (abundancia), con los ratios de hill, junto con los números de entropía de Renyi y la equidad de Pielu. En el panel de correlación las especies presentaron una fuerte asociación en presencia Manganeso (Mg), calcio (K), zinc (Zn), y una altísima correlación con el PH sobre todo en la zona de interfluvios y mayor equidad hacia el Este. Los rojos representan correlación significativa los azules baja.(ver figura 12 y 13)
+Se usaron diferentes métricas para medir los principales componentes de la diversidad: abundacia y equidad. Se hicieron mediante la equidad de Shanon (equidad) y antropia de Simpson (abundancia), con los ratios de Hill, junto con los números de entropía de Renyi y la equidad de Pielu. En el panel de correlación las especies tuvieron una fuerte asociación en presencia Magnesio (Mg), calcio (K), zinc (Zn), y una altísima correlación con el pH sobre todo en la zona de hombrera, perfil de curvatura media con mayor equidad hacia el Este. Los rojos representan alta correlación significativa los azules baja (ver figura  \ref{correlacion_geo} y  \ref{correlacion_esp}).
  
-En el modelo beta se determina que "Hampea appendiculata" y "Quararibea asterolepis" son las especies que más contribuyen a la diversidad con 0.18 y 0.14 % (ver tabla 2),mientras que los sitios con mayor contribucción son 13 con 0.12 y 46 con 0.86 % de especies.
+En el modelo beta las especies *Hampea appendiculata* y *Quararibea asterolepis* fueron las más contribuyentes a la diversidad con 0.18 y 0.14 % (ver tabla 2),mientras que los sitios con mayor aportación son el 13 con 0.12 y 46 con 0.86 % de especies.
 
-En el análisis de rarefacción establece los sitio de mayor y menor diversidad. En los modelos de abundancia de Alpha, el sitio con mayor riqueza es el 30 con 13 especies y el de menor riqueza es el 45 con 5 especies, la abundancia máxima y mínima fuer en los sitios 6 con 127 y 37 con 31, la abundancia en el sitio más pobre fue 123 en el sitio 45, y la abundancia en el sitio más rico fue 110 en el sitio 30.
+En el análisis de rarefacción establece los sitio de mayor y menor diversidad. En los modelos de abundancia de alpha, el sitio con mayor riqueza es el 30 con 13 especies y el de menor riqueza es el 45 con 5 especies, la abundancia máxima y mínima fueron en los sitios 6 con 127 y 37 con 31, la abundancia en el sitio más pobre fue 123 en el sitio 45, y la abundancia en el sitio más rico fue 110 en el sitio 30.
 
  
-![Representación de la distribución de especies por unidad geomorfológica](matriz_correlacion_geomorf_abun_riq_spearman.png){width=80%}
+![Representación de la distribución de especies por unidad geomorfológica \label{correlacion_geo}](matriz_correlacion_geomorf_abun_riq_spearman.png){height=300%}
 
-![Representación de especies por variables ambientales](Representacion_especies_variables_ambientales.png){width=80%}
-
-
+![Representación de especies por variables ambientales \label{correlacion_esp}](Representacion_especies_variables_ambientales.png){height=300%}
 
 
-Tabla 2. Contribución de las especies en la diversidad Beta 
+![Contribución de las especies en la diversidad Beta  \label{tabla_2}]
 
 | Especies de planta   |valor| 
 |----------------------|-----|
@@ -216,78 +203,72 @@ Tabla 2. Contribución de las especies en la diversidad Beta
 
 
 
-## Ecología numérica
+## Ecología espacial
 
 
-Mediante la pruba de permutación para el I de Moran se probó la autocorrelación entre cada especie de plantas. De acuerdo con el resumen estadistico las especies con mayor autocorrelación fueron Apeiba membranacea, Herrania purpurea y Quararibea asterolepis (ver figura 14). Asi mismo, los elementos quimicos del suelos más represetantivos en la autocorrelación fueron el zinc(Zn) con 0.85%, el potasio(K) 0.74%, el calcio (Ca)  0.69 y el pH con 0.72%.
-En cuanto a las zonas geomorfológicas se encuentra una alta correlación en la llanura, en el espolón, en la vertiente y en la vaguada (ver figura 15).
+Mediante la pruba de permutación para del *I de Moran* se probó la autocorrelación entre cada especie de plantas. De acuerdo con el resumen estadistico las especies con mayor autocorrelación fueron *Apeiba membranacea*, *Herrania purpurea* y *Quararibea asterolepis* (ver figura \ref{matriz_esp}). Asimismo, los elementos quimicos del suelos más represetantivos en la autocorrelación fueron el zinc(Zn) con 0.85%, el potasio(K) 0.74%, el calcio (Ca)  0.69 y el pH con 0.72%. En cuanto a las zonas geomorfológicas se encuentra una alta correlación en la llanura, en el espolón, en la vertiente y en la vaguada (ver figura \ref{matriz_geo}).
 
-![Correlograma de matriz de comunidad transformada por especies de plantas](correlograma_matriz_de_comunidad_transformda.jpg){width=80%}
-
-
-
-
-![Correlación entre variables geomorfológicas y elementos del suelo](correlacion_matriz_comunidad_geomorofologicas_variables_suelo.jpg){width=80%}
+![Correlograma de matriz de comunidad transformada por especies \label{matriz_esp}](correlograma_matriz_de_comunidad_transformada.jpg){height=700%}
 
 
 
 
-
-![Correlograma de las diferentes especies de Malvaceae](mi_fam_correlograma.jpg){width=70%}
-
-El correlograma muestra que para el nivel de significancia 0.04 para los 200 metros hay autocorrelación espacial de la matriz de comunidad lo que quiere decir que hay autocorrelación a su vez de alguna variable. Esto significa que la posición 1 y 2 son las que se encuentran más autocorrelacionadas mientras que los otros órdenes (parte de los residuos) no existe una relación entre especies.
+![Correlación entre variables geomorfológicas y elementos del suelo \label{matriz_geo}](correlacion_matriz_comunidad_geomorofologicas_variables_suelo.jpg){height=800%}
 
 
+![Correlograma Mantel de las especies de la familia \label{mantel}](mi_fam_correlograma.jpg){width=90%}
 
-![Clúster LISA aplicado a variables ambientales](cluster_LISA.jpg){width=70%}
+El correlograma presenta que para el nivel de significancia 0.04 en los 200 metros existe autocorrelación espacial en la matriz de comunidad. Esto significa que la posición 1 y 2 son las que se encuentran más autocorrelacionadas mientras que los otros órdenes (parte de los residuos) no existe una relación entre especies (Ver figura \ref{mantel}).
 
-Los cuadros rojos es la autocorrelación espacial con valores altos y el azul representa una autocorrelación espacial con valores bajos. Estos clúster LISA muestran que el PH es la variable que mas esta autocorrelacionada lo que quiere decir que ese lugar es muy acido y es significativamente alto. La variable de elevación media esta al norte donde BCI es mas elevada.
+Los clúster LISA mostraron que el pH es el elemento químico con más autocorrelación espacial, especificamente en la zona de elevación media de BCI localizada al norte (Ver figura  \ref{LISA_ambientales}). En ese mismo orden, indicó que *Quararibea asterolepis* tiene valores de grandes de abundancias y autocorrelación seguido de  *Sterculia apetala*, *Theobroma cacao* y *Pseudobombax septenatum* que presentan un patrón similar (Ver figura \ref{LISA_especies}).Los cuadros rojos representan la autocorrelación espacial con valores altos y el azul con valores bajos.
+
+![Clúster LISA aplicado a variables ambientales \label{LISA_ambientales}](cluster_LISA.jpg){width=90%}
 
 
-![Clúster LISA aplicado especies transformadas](cluster_LISA_aplicado_especies_transformadas.jpg){width=70%}
 
-En este caso Quararibea asterolepis tiene valores de abundancias grandes rodeadas de abundancias grandes. Otras especies como Sterculia apetala, Theobroma cacao y Pseudobombax septenatum muestraun un patrón similar aunque en menor medida.
+![Clúster LISA aplicado especies transformadas \label{LISA_especies}](cluster_LISA_aplicado_especies_transformadas.jpg){width=90%}
+
 
 
 # Discusión
 
-Barro Colorado es una isla biodiversa en el canal de Panamá, considerada como el laboratorio natural más grande del mundo. Dentro de sus multiples variedad de plantas Malvaceae tiene una abundancia de 3,792 especies en total. Dicha familia se distribuye en la parte oriental y sus riquesas máximas se encuentran en el borde superior central.
+Los resultaron mostraron que familia de plantas *Malvaceae* posee una abundancia de 3,792 especies agrupadas mayormente en la parte oriental de manera dispersa en la parcela, con riquezas máximas situadas en el borde superior central. Esta distribución de especies en grupos aleatorios depende de diferentes factores abióticos (no vivo) y bióticos (vivos).
 
-El suelo en la vegetación puede verse modificado por la topografía, es decir por el grado o extensiónn de la pendiente. La cantidad de agua disponible en el suelo, el PH, la cantidad de nutrientes y la textura del suelo son factores que modifican la pendiente (relieve) y por lo tanto influyen en la distribución de las plantas en los bosques.[@clark2002factores]
+Se determinó que en la mayoria de las especies hay una gran asociación entre ellas, y desde el punto de vista de la distancia de Jaccard están muy proximas. Adicionamente, el agrupamiento de especies en forma de dendograma se generó mediante el método Ward por ser el más facil de interpretar.
 
-En la isla en áreas de tierra firme, el nivel freático puede subir ocasionalmente, y causar periodos excepcionalmente adversos y hata letales para la vegetación [@clark2002factores]. Por tal razón las condiciones climáticas y topograficas influyen en la distribución de las plantas BCI. En el caso de compuestos donde hay escasa correlación puede deberse a un exceso de precipitación o largos periodos de sequía.
+Al analizar por separado los gráficos de escalonamiento de ordenación RDA y CCA, los resultados indicaron que solo algunos compuestos del suelo están asociados con especies de la familia, como son el magnesio (Mg), calcio (Ca) siendo el pH el más representativo del área estudiada.
 
-Utilizando la métrica de cuerdas se determina que en la mayoria de las especies hay una gran asociación entre ellas, y desde el punto de vista de la distancia Jaccard están muy próximos.
-Al analizar por separado, los gráficos de componenetes principales de suelo, los resultados indican que determinados compuestos del suelo estan asociados con especies de la familia.Se destaca la presencia de Hampea appendiculata y Quararibea asterolepis sobre encima de las otras especies de la familia. El PH, Manganeso (Mg), calcio (K), zinc (Zn) resultaron ser los elementos quimicos mas significativos sobre todo en la parte de la vaguada. Apeiba membranacea y Herrania purpurea resultaron con una mayor autocorrelación comprobada mediante la pruba de permutación para el I de Moran. El PH por igual,debido a esto, es una zona con mucha acidez. Esta alta acidez del suelo genera disminución en la disponibilidad de ciertos elementos nutritivos como son el fósforo, magnesio y calcio en aquellos suelos donde suelen ser absorbidos por las plantas, por lo tanto una letalidad más rápida en las plantas.
+Se destaca la especie *Quararibea asterolepis* por encima de las otras de la familia tanto en la diversidad, distribución como en contribución de los sitios. De igual manera fue la especie con mayor autocorrelación espacial, seguida de *Apeiba membranacea* y *Herrania purpurea* las cuales también contribuyeron a la diversidad de sitios. Las zonas donde se produjo esta autocorrelación fueron en la llanura, espolón y vertiente en presencia de pH, zinc (Zn), boro (B) y calcio (Ca). En cambio, las zonas de hombrera y elevación media presentaron mayor diversidad en presencia de magnesio (Mg), calcio (Ca), zinc (Zn) que son conocidas por ser zonas húmedas.
 
 
-Por otro lado, tomando en cuenta el criterio de la correlación cofenética y el método de anchura de silueta y luego de haber comparado los 4 métodos se determina que el método más apropieado fue WARD. Solo 3 especies resultaron ser indicadoraras por lo que estas permanecen al momento de hacer un remuestreo.
+La topografía puede verse modificada por los compuestos del suelo en la vegetación. La cantidad de agua disponible en el suelo, el pH, la cantidad de nutrientes y la textura del suelo son factores que modifican la pendiente (relieve) y por lo tanto, influyen en la distribución de las plantas en los bosques.[@clark2002factores] En BCI en áreas de tierra firme, el nivel freático puede subir ocasionalmente, y causar periodos excepcionalmente adversos y hasta letales para la vegetación [@clark2002factores]. Por tanto, las condiciones climáticas, factores edáficos y la topografía del terreno influyen directamente en la distribución y modificación de las plantas en BCI. En el caso de los compuestos donde hay escasa correlación puede deberse a un exceso de precipitación o largos periodos de sequía.
 
-Los patrones de esta especie de plantas son afectados por los elementos quimicos del suelo, y en menor medida por la topografía de la Isla y estos patrones puede variar a lo largo del tiempo debido al clima y la precipitación. Por esto los grupos más predominantes se desarrollan en zonas húmedas.
+Asimismo, la alta presencia de pH en el suelo genera una acidificación que provoca una disminución en la disponibilidad de ciertos elementos nutritivos como son el fósforo, magnesio y calcio en aquellos suelos donde suelen ser absorbidos por las plantas, por lo tanto una letalidad más rápida en las plantas.[@alvaro2019].
+
+A partir de los datos estudiados y comparándolos con estudios anteriores se distingue que las plantas son propensas a desarrollarse en áreas húmedas y con disponibilidad de agua esto se comprueba por patrones discontinuo por aglomeración en presencia en las zonas de vaguada, la llanura, el espolón y la vertiente.
+
+Según investigadores, los patrones de lluvia están cambiando, con períodos secos extremos más frecuentes en toda la región. En el pasado, estos períodos secos puedieron haber conducido a un aumento de las tasas de extinción de fauna y flora y alteración el los compuesto del suelo [@armuelles2021]. En este aspecto, si los patrones de lluvias continúan cambiando con periodos más secos, en dos décadas la Isla Barro Colorado  podría perder especies de plantas como de animales, y esto podrían ocasionar un aumento de la tasa de extinción de las clases de plantas de la familia *Malvaceae*.
 
 
 
 # Agradecimientos
-Esta investigación se llevo a cabo gracias al profesor José Ramón Maartinez Battle de Biogeografía del área de las ciencias geográficas de la Universidad Autónoma de Santo Domingo (UASD) por tener la iniciativa, propiciar las investigaciones y facilitar las herramientas para este estudio en este mismo orden a la escuela de geografía de la UASD por ser fuente de formación de profesionales en el área de geografía. 
+Agradezco al profesor de Biogeografía José Ramón Martinez Battle del área de las ciencias geográficas de la Universidad Autónoma de Santo Domingo (UASD) por tener la iniciativa, propiciar las investigaciones y facilitar las herramientas para este estudio.De igual forma a la escuela de geografía de la UASD por ser fuente de formación de profesionales en el área de geografía. 
 
-Por igual al Instituto Smithsonian de Instigaciones Tropicales por facilitar los datos recogidos de años en la Isla Barro Colorado. Por último un agradecimiento a la estudiante de Ciencias Geográficas Ana Valera por ayudarme a la redacción de esta investigación.
+De igual forma, al Instituto Smithsonian de Instigaciones Tropicales por facilitar los datos recogidos de años en la Isla Barro Colorado. Por último a la estudiante de Ciencias Geográficas Ana Valera por ayudarme a la redacción de esta investigación.
 
 
 # Información de soporte
 
-![Mapa 4. Representación de las variables por Hectareas](mapas_variables_ambientales_numericas.png){width=70%}
-
 ![Representación de variables ambientales nominales](mapas_variables_ambientales_nominales_tmap.png){width=70%}
 
-![Mapa 4. Matriz anchura de siluetas](anchura_siluetas_matriz.png){width=70%}
+![Mapa 4. Matriz anchura de siluetas por el método Ward](mapa_de_calor_ward.png){width=60%}
 
 
 
 
 
-![Indice de correlaciónd e pearsons\label{fig:matriz_disimilaridad}](Indice_correlacion_Pearson.png){width=70%}
+![Indice de correlación de pearsons\label{fig:matriz_disimilaridad}](Indice_correlacion_Pearson.png){width=70%}
 
-![Barra quebrada modelo](modelo_barra_quebrada.png){width=70%}
 
 ![Gráfico de rarefacción](grafico_de_rarefaccion.png){width=80%}
 
