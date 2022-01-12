@@ -144,7 +144,7 @@ En el mapa de calor ordenado (a la derecha), presenta un clúster gigante en el 
 
 Los dendogramas fueron generados por los métodos de enlaces simple, completos, UGMA y Ward (Ver figura \ref{4_dendogramas}). Estos mostraron cortes desiguales en los método UPGMA, completo y simple produciendo agrupamientos integrados por un gran número de sitios o por un sitio único. Se detectaron elementos que no forman grupos, es decir, sitios que aparecen aislados del resto como fue el caso del método por enlace simple. No obstante, con el método Ward de anchura de silueta se generó un dendograma más legible. Dicho método sugirió dividir el dendograma en 2 grupos; un grupo pequeño integrado por 8 sitios y otro grupo compuesto por los 42 sitios restantes (Ver figura \ref{dendograma_ward}). 
 
-![Dendogramas por los cuatro métodos \label{dendogramas}](4_dendogramas.png){width=110%}
+![Dendogramas por los cuatro métodos \label{4_dendogramas}](4_dendogramas.png){width=110%}
 
 
 ![Dendograma por el método Ward \label{dendograma_ward}](dendograma_metodo_ward_2_grupos.png){width=80%}
